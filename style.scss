@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+$primary-font: ("Roboto", sans-serif);
+$symbol-color: #ff9f0a;
+$number-color: #e0e0e0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $primary-font;
+}
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#428dbf, #b59b68);
+  .container {
+    max-width: 320px;
+    box-shadow: 0 0 200px 30px rgba(#cdcdcd, 0.6);
+  }
+  .display {
+    padding: 10px;
+    color: rgba(#fff, 0.7);
+    font-size: 26px;
+    padding-top: 30px;
+    text-align: right;
+    background-color: transparent;
+    border: none;
+  }
+  .calculator-frame {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid rgba(#000000, 0.5);
+    mix-blend-mode: overlay;
+    button {
+      flex: 0 1 25%;
+      height: 70px;
+      color: #111;
+      font-size: 2em;
+      mix-blend-mode: overlay;
+      background: rgba($number-color, 0.8);
+      border: 1px solid rgba(#000000, 0.4);
+      &.btn-large {
+        flex: 50%;
+      }
+      &.btn-symbol {
+        background: rgba($symbol-color, 0.9);
+      }
+    }
+  }
+  button:active {
+    background-color: $symbol-color;
+  }
+  .btn-symbol:active {
+    background-color: $number-color !important;
+  }
+}
