@@ -28,11 +28,9 @@ btnValue.forEach((num: HTMLButtonElement) => {
     }
   });
 });
-
 symbol.forEach((btn: HTMLButtonElement) => {
   btn.addEventListener("click", () => {
     let value = btn.value;
-
     if (value === "clear") {
       displayScreen.value = "";
       number1 = null;
@@ -54,10 +52,6 @@ symbol.forEach((btn: HTMLButtonElement) => {
         number1 = -currentNumber;
       } else {
         number2 = -currentNumber;
-      }
-    } else if (value === ".") {
-      if (!displayScreen.value.includes(".")) {
-        displayScreen.value += ".";
       }
     } else {
       operator = value;
